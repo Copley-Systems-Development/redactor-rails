@@ -6063,7 +6063,9 @@
 						this.sel.removeAllRanges();
 					} catch (e) {}
 
-					this.sel.addRange(this.range);
+					if(jQuery.contains(document, this.range.startContainer)) {
+						this.sel.addRange(this.range);
+					}
 				},
 				getCurrent: function()
 				{
